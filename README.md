@@ -6,19 +6,23 @@
 3. the most frequently occurring word length
 4. list of the number of words of each length
 
-For example, a text file containing the sentence *Hello world & good morning. The date is 18/05/2016*
+For example, a text file containing the sentence  
 
-Will return Word count = 9  
-Average word length = 4.556  
-Number of words of each length:  
-Number of words of length 1 is 1  
-Number of words of length 2 is 1  
-Number of words of length 3 is 1  
-Number of words of length 4 is 2  
-Number of words of length 5 is 2  
-Number of words of length 7 is 1  
-Number of words of length 10 is 1  
-The most frequently occurring word length is 4, for word lengths of 4 & 5  
+*Hello world & good morning. The date is 18/05/2016*  
+
+Will return  
+
+*Word count = 9*  
+*Average word length = 4.556*  
+*Number of words of each length:*  
+*Number of words of length 1 is 1*  
+*Number of words of length 2 is 1*  
+*Number of words of length 3 is 1*  
+*Number of words of length 4 is 2*  
+*Number of words of length 5 is 2*  
+*Number of words of length 7 is 1*  
+*Number of words of length 10 is 1*  
+*The most frequently occurring word length is 4, for word lengths of 4 & 5*
 
 ### Definition of "word":
 1. Alphanumeric characters (letters and digits): Words are considered sequences of letters and digits as they typically appear in natural language. For example, "word123" is counted as a single word.  
