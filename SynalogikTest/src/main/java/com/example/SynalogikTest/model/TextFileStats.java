@@ -1,5 +1,6 @@
 package com.example.SynalogikTest.model;
 
+import java.util.List;
 import java.util.Map;
 
 public class TextFileStats {
@@ -59,4 +60,14 @@ public class TextFileStats {
         return builder.toString();
     }
 
+
+    private List<Integer> mostFrequentWordLengths;
+
+    public void setMostFrequentWordLengths(List<Integer> mostFrequentWordLengths) {
+        this.mostFrequentWordLengths = mostFrequentWordLengths;
+    }
+
+    public List<Integer> getMostFrequentWordLengths() {
+        return mostFrequentWordLengths;
+    }
 }
