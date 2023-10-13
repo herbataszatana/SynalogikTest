@@ -19,7 +19,7 @@ public class TextFileStatsControllerTests {
     private MockMvc mvc;
 
     @Test
-    public void testAnalyzeEndpoint() throws Exception  {
+    public void testAnalyseEndpoint() throws Exception  {
 
         MockMultipartFile file = new MockMultipartFile(
                 "file",
@@ -27,12 +27,29 @@ public class TextFileStatsControllerTests {
                 MediaType.TEXT_PLAIN_VALUE,
                 "content".getBytes()
         );
-
         MvcResult result = mvc.perform(multipart("/analyse").file(file))
                 .andExpect(status().isOk())
                 .andReturn();
-
         String responseContent = result.getResponse().getContentAsString();
+    }
+
+    @Test
+    public void testAnalyzeInvalidFile() throws Exception {
+
+        MockMultipartFile file = new MockMultipartFile("file", "data.pdf",
+                MediaType.APPLICATION_PDF_VALUE, "invalid".getBytes());
+
+        mvc.perform(multipart("/analyse").file(file))
+                .andExpect(status().isBadRequest())
+                .andReturn();
+    }
+
+    @Test
+    public void testAnalyzeNoFile() throws Exception {
+
+        mvc.perform(multipart("/analyse"))
+                .andExpect(status().isBadRequest())
+                .andReturn();
     }
 
 }

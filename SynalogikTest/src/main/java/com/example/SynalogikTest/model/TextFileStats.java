@@ -43,7 +43,7 @@ public class TextFileStats {
             builder.append("Number of words of length ").append(entry.getKey()).append(" is ").append(entry.getValue()).append("\n");
         }
         int maxCount = wordLengthCounts.values().stream().max(Integer::compareTo).orElse(0);
-        builder.append("The most frequently occurring word length is ").append(mostFrequentWordLength).append(", for word lengths of ");
+        builder.append("The most frequently occurring word length is ").append(mostFrequentWordLengths.size()).append(", for word lengths of ");
 
         boolean first = true;
         for (Map.Entry<Integer, Integer> entry : wordLengthCounts.entrySet()) {
@@ -60,14 +60,16 @@ public class TextFileStats {
         return builder.toString();
     }
 
-
     private List<Integer> mostFrequentWordLengths;
 
     public void setMostFrequentWordLengths(List<Integer> mostFrequentWordLengths) {
         this.mostFrequentWordLengths = mostFrequentWordLengths;
     }
-
     public List<Integer> getMostFrequentWordLengths() {
         return mostFrequentWordLengths;
+    }
+
+    public int getMostFrequentWordLengthsSize(){
+    return mostFrequentWordLengths.size();
     }
 }
