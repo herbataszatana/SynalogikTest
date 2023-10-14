@@ -8,7 +8,11 @@ public class TextFileStats {
     private float averageWordLength;
     private int mostFrequentWordLength;
     private Map<Integer, Integer> wordLengthCounts;
+    private List<Integer> mostFrequentWordLengths;
 
+    /*
+    Setter and getter methods for the TextFileStats
+     */
     public void setTotalWords(int totalWords) {
         this.totalWords = totalWords;
     }
@@ -20,6 +24,16 @@ public class TextFileStats {
     }
     public void setWordLengthCounts(Map<Integer, Integer> wordLengthCounts) {
         this.wordLengthCounts = wordLengthCounts;
+    }
+    public void setMostFrequentWordLengths(List<Integer> mostFrequentWordLengths) {
+        this.mostFrequentWordLengths = mostFrequentWordLengths;
+    }
+    public List<Integer> getMostFrequentWordLengths() {
+        return mostFrequentWordLengths;
+    }
+
+    public int getMostFrequentWordLengthsSize(){
+        return mostFrequentWordLengths.size();
     }
     public int getTotalWords() {
         return totalWords;
@@ -34,6 +48,9 @@ public class TextFileStats {
         return wordLengthCounts ;
     }
 
+    /*
+    toFormattedString() generates formated sting with the statistics that is displayed as response
+     */
     public String toFormattedString() {
         StringBuilder builder = new StringBuilder();
         builder.append("Word count = ").append(totalWords).append("\n");
@@ -60,16 +77,5 @@ public class TextFileStats {
         return builder.toString();
     }
 
-    private List<Integer> mostFrequentWordLengths;
 
-    public void setMostFrequentWordLengths(List<Integer> mostFrequentWordLengths) {
-        this.mostFrequentWordLengths = mostFrequentWordLengths;
-    }
-    public List<Integer> getMostFrequentWordLengths() {
-        return mostFrequentWordLengths;
-    }
-
-    public int getMostFrequentWordLengthsSize(){
-    return mostFrequentWordLengths.size();
-    }
 }
